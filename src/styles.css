@@ -35,24 +35,47 @@ p, h1, h2, h3, h4, h5, h6 {
 :root {
     font-size: 16px;
     --page-width: 750px;    
-
-    color: rgb(29, 29, 181);
+    --input-left-position:10px;
+    --input-width: 180px;
 }
 
-body {
+.content-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 1000px; */
+
+}
+
+.form{
+    margin: 40px;
  
 }
 
-header {
-
-}
-
-p {
-
-}
-
-#content {
+fieldset{
     
+    display: grid;
+    grid-template-columns: 160px var(--input-width) 0px;
+    grid-auto-rows:auto;
+
+    gap: 10px;
+    width: 400px;
+    justify-items: start;
+
+    overflow:visible;
+
+    padding: 20px;
+
+}
+
+input:invalid{
+    border-color: #900;
+  background-color: #fdd;
+}
+
+
+.text-input{
+    width: var(--input-width);
 }
 
 h1 {
@@ -63,6 +86,25 @@ h2 {
     font-size: 2rem;
 }
 
+/* This is the style of our error messages */
+.error {
+    /* width: 100%; */
+    padding: 0;
+  
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+  
+    box-sizing: border-box;
+
+    white-space:nowrap;
+   
+  }
+  
+.error.active {
+    padding: 0.3em;
+}
 
 
 @media (max-width: 425px) {

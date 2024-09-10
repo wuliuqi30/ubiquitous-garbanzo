@@ -5,9 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template</title>
+    
 </head>
 
 <body>
+
+    <section class="content-container">
+        <form class="form" novalidate>
+            <fieldset>
+                <label for="email">Email:</label>
+                <input id="email" type="text" class="text-input" name="email-out" required/>
+                
+                <span class="error" aria-live="polite"></span>
+                <label for="zipcode">Zipcode:</label>
+                <input id="zipcode" type="text" class="text-input" name="zipcode-out" />
+                <span class="error" aria-live="polite"></span>
+                <label for="pw">Password:</label>
+                <input id="pw" type="text" class="text-input" name="pw-out" />
+                <span class="error" aria-live="polite"></span>
+                <label for="pw-confirm">Confirm Password:</label>
+                <input id="pw-confirm" type="text" class="text-input" name="pw-confirm-out" />
+                <span class="error" aria-live="polite"></span>
+                <button type="submit">Submit</button>
+            </fieldset>
+
+        </form>
+    </section>
 </body>
 
 </html>
