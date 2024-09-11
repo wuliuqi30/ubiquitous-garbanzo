@@ -5,110 +5,182 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
-img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
 }
-input, button, textarea, select {
-    font: inherit;
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
-p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
-#root, #__next {
-    isolation: isolate;
+#root,
+#__next {
+  isolation: isolate;
 }
 
 /* -------------------------------------------------------------------------
 */
 
 :root {
-    font-size: 16px;
-    --page-width: 750px;    
-    --input-left-position:10px;
-    --input-width: 180px;
+  font-size: 16px;
+  --page-width: 750px;
+  --input-left-position: 10px;
+  --input-width: 230px;
+
+  --good-bg-color: rgb(202, 244, 206);
+  --good-font-color: rgb(0, 0, 0);
+  --good-border-color: green;
+
+  --bad-bg-color: #fdd;
+  --bad-font-color: black;
+  --bad-border-color: #900;
 }
 
 .content-container {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    /* width: 1000px; */
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 1000px; */
 }
 
-.form{
-    margin: 40px;
- 
+.form {
+  margin: 40px;
 }
 
-fieldset{
-    
-    display: grid;
-    grid-template-columns: 160px var(--input-width) 0px;
-    grid-auto-rows:auto;
+fieldset {
+  display: grid;
+  grid-template-columns: 160px var(--input-width) 0px;
+  grid-auto-rows: auto;
 
-    gap: 10px;
-    width: 400px;
-    justify-items: start;
+  gap: 10px;
+  width: 420px;
+  justify-items: start;
 
-    overflow:visible;
+  overflow: visible;
 
-    padding: 20px;
-
+  padding: 20px;
 }
 
-input:invalid{
-    border-color: #900;
-  background-color: #fdd;
+/* input:invalid{
+    border-color: var(--bad-border-color);
+  background-color:var(--bad-bg-color);
+  color: var(--bad-font-color);
+} */
+
+.invalid {
+  border-color: var(--bad-border-color);
+  background-color: var(--bad-bg-color);
+  color: var(--bad-font-color);
 }
 
+input:invalid.empty {
+  background-color: white;
+  border-color: black;
+}
 
-.text-input{
-    width: var(--input-width);
+.text-input {
+  width: var(--input-width);
 }
 
 h1 {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
 h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 /* This is the style of our error messages */
 .error {
-    /* width: 100%; */
-    padding: 0;
-  
-    font-size: 80%;
-    color: white;
-    background-color: #900;
-    border-radius: 0 0 5px 5px;
-  
-    box-sizing: border-box;
+  /* width: 100%; */
+  padding: 0;
 
-    white-space:nowrap;
-   
-  }
-  
-.error.active {
-    padding: 0.3em;
+  font-size: 80%;
+  color: white;
+  background-color: var(--bad-border-color);
+  border-radius: 0 0 5px 5px;
+
+  box-sizing: border-box;
+
+  white-space: nowrap;
 }
 
+/* .error.active {
+    padding: 0.3em;
+} */
+
+.error.valid {
+  background-color: var(--good-bg-color);
+  border: 2px solid var(--good-border-color);
+  color: var(--good-font-color);
+}
+
+/* .valid{
+    background-color:var(--good-bg-color);
+    border: 2px solid var(--good-border-color);
+    color:var(--good-font-color);
+} */
+
+input:valid {
+  background-color: var(--good-bg-color);
+  border: 2px solid var(--good-border-color);
+  color: var(--good-font-color);
+}
+
+.pw-invalid {
+  border-color: var(--bad-border-color);
+  background-color: var(--bad-bg-color);
+  color: var(--bad-font-color);
+}
+
+.pw-tips {
+  grid-column: 2 / 3;
+}
+
+.pw-tips-bad {
+  color: var(--bad-border-color);
+}
+
+.pw-tips-good {
+  color: var(--good-border-color);
+}
+
+.left-column {
+  grid-column: 1 / 2;
+}
+
+#submit-btn {
+  grid-column: 2 / 3;
+  width: 100px;
+}
 
 @media (max-width: 425px) {
-   :root {
-       font-size: 12px;
-    }
+  :root {
+    font-size: 12px;
+  }
 }
